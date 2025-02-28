@@ -94,13 +94,26 @@ nav {
   min-height: 100vh;
   width: 100%;
   background-color: #d4d0b9;
+  padding: 6vw 0;
+}
+#moving-text {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+#moving-text::-webkit-scrollbar {
+  display: none;
 }
 .con {
   /* background-color: lightblue; */
   white-space: nowrap;
+  display: inline-block;
+  animation-name: move;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 #moving-text h1 {
-  background-color: rgb(210, 210, 236);
+  /* background-color: rgb(210, 210, 236); */
   font-size: 9vw;
   display: inline-block;
 }
@@ -108,5 +121,15 @@ nav {
   height: 70px;
   width: 70px;
   border-radius: 50%;
-  background-color: rgb(208, 43, 92);
+  background-color: #354024;
+  display: inline-block;
+  margin: 1vw 2vw;
+}
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
